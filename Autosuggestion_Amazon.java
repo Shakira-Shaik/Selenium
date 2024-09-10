@@ -18,7 +18,7 @@ public class Autosuggestion_Amazon {
 	    Thread.sleep(5000);
 		List<WebElement>li =driver.findElements(By.xpath("//div[@class='two-pane-results-container']/div/div"));
 		int count=li.size();
-		li.get(count-7).click();
+		li.get(count-9).click();
 	}
 
 }
