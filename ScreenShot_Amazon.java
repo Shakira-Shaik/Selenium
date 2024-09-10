@@ -19,14 +19,18 @@ public class ScreenShot_Amazon {
 		driver.manage().window().maximize();//to maximize the browser
 	    driver.get("https://www.amazon.in");
 	    WebElement E1= driver.findElement(By.id("twotabsearchtextbox"));
-	    E1.sendKeys("watch");
-	    Thread.sleep(3000);
+	    E1.sendKeys("mobile");
+	     Thread.sleep(2000); 
 		List<WebElement>li =driver.findElements(By.xpath("//div[@class='two-pane-results-container']/div/div"));
 		int count=li.size();
 		li.get(count-9).click();
 	     TakesScreenshot T1= driver; //upcasting
 		File source=T1.getScreenshotAs(OutputType.FILE);
-		File Destination=new File("H:\\Users\\shaki\\Desktop\\AB44\\shakira.png");
+	//	File Destination=new File("H:\\Users\\shaki\\Desktop\\AB44\\Amazonscreenshot.png");
+		File Destination=new File("H:\\Users\\shaki\\Desktop\\AB44\\Amazonscreenshot"+Math.random()+".png");//unique screen shot
+		//it doesnt replace the previous one with new one when you run each time i.e it gives the unique one
+	//	File Destination=new File("H:\\Users\\shaki\\Desktop\\AB44\\Amazonscreenshot"+new ScreenShot_Amazon().getClass()+".png");
+		//it gives the screen shot with class name 
 		FileHandler.copy(source, Destination); 
 		
 	}
